@@ -51,7 +51,7 @@ export const KalaPravahTimeline: React.FC = () => {
       <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF7F0] border border-[#D8CCA8] shadow-sm text-xs font-semibold text-[#8C4F3B]">
           <Sparkles className="w-3.5 h-3.5 text-[#C29B38]" />
-          <span>Interactive Exhibition · CO1 Academic Evaluation</span>
+          <span>Interactive Chronology · 5,000 Years of Bharatiya Silpa</span>
         </div>
 
         <h2 className="text-3xl sm:text-5xl font-bold font-heading text-[#1C1A17] tracking-tight">

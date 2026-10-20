@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { tanpuraAudio } from '@/components/audio/AudioGuide';
-import { Volume2, VolumeX, Music, Compass, BookOpen } from 'lucide-react';
+import { Volume2, VolumeX, Landmark } from 'lucide-react';
 
 export const MuseumHeader: React.FC = () => {
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
@@ -38,7 +38,7 @@ export const MuseumHeader: React.FC = () => {
               KALA PRAVAH
             </span>
             <span className="hidden sm:inline-block ml-2 text-xs font-semibold text-[#8C4F3B] uppercase tracking-widest font-body-editorial">
-              काल प्रवाह · Sem 5 CLA-I
+              काल प्रवाह · Bharatiya Kala Heritage
             </span>
           </div>
         </div>
@@ -68,10 +68,10 @@ export const MuseumHeader: React.FC = () => {
             )}
           </button>
 
-          {/* Academic Scope Pill */}
+          {/* Museum Archive Badge */}
           <div className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/70 border border-[#E7DFD2] text-[11px] font-medium text-[#7E766D]">
-            <BookOpen className="w-3 h-3 text-[#B85D3B]" />
-            <span>Task 1 · 10 Marks (CO1)</span>
+            <Landmark className="w-3.5 h-3.5 text-[#B85D3B]" />
+            <span>Virtual Heritage Archive</span>
           </div>
         </div>
       </div>

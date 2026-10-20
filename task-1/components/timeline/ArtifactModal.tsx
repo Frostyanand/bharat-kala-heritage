@@ -169,11 +169,11 @@ export const ArtifactModal: React.FC<Props> = ({ artifact, onClose, onOpenCompar
             {activeTab === 'dossier' && (
               <div className="w-full h-full p-6 overflow-y-auto bg-white font-body-editorial text-base text-[#3D352E] leading-relaxed space-y-4">
                 <div className="p-4 rounded-xl bg-[#FAF7F0] border border-[#E7DFD2]">
-                  <h4 className="font-heading font-bold text-sm text-[#A84B29] uppercase tracking-wider mb-2">
-                    Academic Assignment Alignment
+                  <h4 className="font-heading font-bold text-xs text-[#A84B29] uppercase tracking-wider mb-1">
+                    Archaeological Classification & Chronology
                   </h4>
-                  <p className="text-sm text-[#4A453F]">
-                    <strong>{artifact.academicCO}</strong>: Detailed archaeological, metallurgical, and cultural analysis fulfilling Semester 5 syllabus requirements.
+                  <p className="text-xs text-[#4A453F]">
+                    Documented specimen from the <strong>{artifact.era}</strong> ({artifact.dateRange}). Catalogued in accordance with national museum antiquity preservation archives.
                   </p>
                 </div>
 
