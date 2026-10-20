@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+:root {
+  --font-cinzel: 'Cinzel', serif;
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+
+  --bg-parchment: #FAF7F0;
+  --bg-parchment-warm: #F4EFE6;
+  --bg-card: #FFFFFF;
+  --bg-card-subtle: #F9F5EE;
+
+  --terracotta-raw: #A84B29;
+  --terracotta-vibrant: #B85D3B;
+  --indigo-ajanta: #1F3A52;
+  --indigo-deep: #142535;
+  --bronze-chola: #7C6035;
+  --gold-marigold: #C29B38;
+  --gold-leaf: #D4AF37;
+  
+  --ink-primary: #1C1A17;
+  --ink-secondary: #4A453F;
+  --ink-muted: #7E766D;
+  
+  --border-delicate: #E7DFD2;
+  --border-rich: #D8CCA8;
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-parchment);
+    color: var(--ink-primary);
+    font-family: var(--font-jakarta);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: var(--font-cinzel);
+    letter-spacing: 0.03em;
+  }
+
+  .font-body-editorial {
+    font-family: var(--font-cormorant);
+  }
+
+  /* Custom antique museum scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F3ECE1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #C8B89E;
+    border-radius: 4px;
+    border: 2px solid #F3ECE1;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #A84B29;
+  }
+}
+
+/* Subtle organic paper texture effect */
+.bg-parchment-texture {
+  background-color: #FAF7F0;
+  background-image: 
+    radial-gradient(#E8DFC8 0.75px, transparent 0.75px),
+    radial-gradient(#E2D6BC 0.75px, #FAF7F0 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* Traditional Indian motif border */
+.indian-motif-border {
+  border-image: linear-gradient(to right, #B85D3B, #C29B38, #1F3A52) 1;
+}
+
+/* Gold foil foil sheen animation */
+@keyframes goldShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    90deg, 
+    #C29B38 0%, 
+    #FFF0B3 50%, 
+    #C29B38 100%
+  );
+  background-size: 200% 100%;
+  animation: goldShimmer 6s infinite linear;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Delicate museum glass card */
+.museum-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(216, 204, 168, 0.6);
+  box-shadow: 
+    0 4px 20px -2px rgba(132, 103, 65, 0.06),
+    0 2px 6px -1px rgba(0, 0, 0, 0.04);
+}
+
+.museum-card-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.museum-card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(184, 93, 59, 0.6);
+  box-shadow: 
+    0 16px 32px -4px rgba(168, 75, 41, 0.12),
+    0 4px 12px -2px rgba(0, 0, 0, 0.06);
+}
