@@ -71,24 +71,30 @@ Indian Art Form Sem 5/                     <-- Unified Project Root (Git Reposit
 
 ---
 
-## 🚀 How to Run the Demo
+## 🚀 How to Run the Demos
 
-### Method A: One-Click Launch (Recommended)
-Double-click the **`run-project.bat`** file in the root folder.
-*It will automatically check dependencies, launch the Next.js server on `http://localhost:3001`, and open your default browser.*
+### Method A: Master Interactive Launcher (Recommended)
+Double-click **`run-all-demos.bat`** in the project root:
+- Choose `[1]` to launch **Task 1: Kala Pravah** on `http://localhost:3001`
+- Choose `[2]` to launch **Task 2: KalaDarshan** on `http://localhost:5173`
+- Choose `[3]` to launch **BOTH** simultaneously for a side-by-side presentation!
 
-### Method B: Manual Command Line
+### Method B: Standalone Task Launchers
+* **Task 1 (Interactive Timeline):** Double-click **`run-project.bat`**
+* **Task 2 (Interactive Art Map):** Double-click **`run-task-2.bat`**
+
+### Method C: Manual Terminal Execution
 ```bash
-# Navigate to task 1
+# To run Task 1 (Next.js):
 cd task-1
-
-# Install dependencies
-npm install
-
-# Start development server
 npm run dev -- -p 3001
+# Open http://localhost:3001
+
+# To run Task 2 (Vite):
+cd task-2
+npm run dev -- --port 5173
+# Open http://localhost:5173
 ```
-Open **[http://localhost:3001](http://localhost:3001)** in your browser.
 
 ---
 
@@ -105,5 +111,7 @@ This project intentionally eliminates the generic hallmarks of automated AI web 
 ## 👥 Course & Assignment Mapping
 * **Course:** Indian Art Form (Semester 5)
 * **Assessment:** Continuous Learning Assessment (CLA-I) — 30% Weightage
-* **Task 1 Scope:** 10 Marks (Course Outcome 1: CO1)
-* **Status:** Complete & Ready for Evaluation
+* **Task 1: Interactive Timeline with Virtual Artifacts (CO1)** — Complete (Port 3001)
+* **Task 2: Interactive Art Map & Living Heritage Atlas (CO1)** — Complete (Port 5173)
+* **Status:** Complete, Integrated & Ready for Evaluation
+
