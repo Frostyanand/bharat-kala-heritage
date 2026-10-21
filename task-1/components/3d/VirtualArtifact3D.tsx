@@ -204,17 +204,44 @@ export const VirtualArtifact3D: React.FC<Props> = ({ artifact, autoRotate = true
     specimenMesh.receiveShadow = true;
     artifactGroup.add(specimenMesh);
 
-    // Ornate Beveled Outer Frame for Gilded Paintings & Miniatures
+    // Ornate Hollow Beveled Outer Frame for Gilded Paintings & Miniatures
     if (artifact.modelType === 'gilded-frame' || artifact.modelType === 'miniature-scroll') {
-      const frameGeo = new THREE.BoxGeometry(tabletWidth + 0.18, tabletHeight + 0.18, tabletDepth + 0.04);
+      const frameGroup = new THREE.Group();
+      frameGroup.position.set(0, 0.2, 0);
+
+      const frameColor = artifact.modelType === 'gilded-frame' ? 0xD4AF37 : 0x5C3818;
       const frameMat = new THREE.MeshStandardMaterial({
-        color: artifact.modelType === 'gilded-frame' ? 0xD4AF37 : 0x6E482B,
-        roughness: 0.35,
-        metalness: artifact.modelType === 'gilded-frame' ? 0.75 : 0.2
+        color: frameColor,
+        roughness: artifact.modelType === 'gilded-frame' ? 0.35 : 0.6,
+        metalness: artifact.modelType === 'gilded-frame' ? 0.75 : 0.15,
       });
-      const frameMesh = new THREE.Mesh(frameGeo, frameMat);
-      frameMesh.position.set(0, 0.2, -0.02);
-      artifactGroup.add(frameMesh);
+
+      const frameWidth = 0.08;
+      const frameDepth = tabletDepth + 0.02;
+
+      // Left vertical border
+      const sideBarGeo = new THREE.BoxGeometry(frameWidth, tabletHeight + frameWidth * 2, frameDepth);
+      const leftBar = new THREE.Mesh(sideBarGeo, frameMat);
+      leftBar.position.set(-(tabletWidth / 2 + frameWidth / 2), 0, 0);
+      frameGroup.add(leftBar);
+
+      // Right vertical border
+      const rightBar = new THREE.Mesh(sideBarGeo, frameMat);
+      rightBar.position.set(tabletWidth / 2 + frameWidth / 2, 0, 0);
+      frameGroup.add(rightBar);
+
+      // Top horizontal border
+      const topBottomBarGeo = new THREE.BoxGeometry(tabletWidth, frameWidth, frameDepth);
+      const topBar = new THREE.Mesh(topBottomBarGeo, frameMat);
+      topBar.position.set(0, tabletHeight / 2 + frameWidth / 2, 0);
+      frameGroup.add(topBar);
+
+      // Bottom horizontal border
+      const bottomBar = new THREE.Mesh(topBottomBarGeo, frameMat);
+      bottomBar.position.set(0, -(tabletHeight / 2 + frameWidth / 2), 0);
+      frameGroup.add(bottomBar);
+
+      artifactGroup.add(frameGroup);
     }
 
     // Architectural Museum Pedestal Base
